@@ -1221,6 +1221,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 			end	
 		end
 	end)
+    makefolder(ConfigurationFolder)
 
 	AddDraggingFunctionality(Topbar,Main)
 
