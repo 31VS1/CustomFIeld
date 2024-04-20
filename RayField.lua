@@ -2728,7 +2728,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 					wait(0.15)
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
-                    RemoveModule(Toggle.Title.Text)	
+                    AddModule(Toggle.Title.Text)	
 				else
 					ToggleSettings.CurrentValue = true
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
@@ -2743,7 +2743,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 					wait(0.15)
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0}):Play()	
-                    AddModule(Toggle.Title.Text)	
+                    RemoveModule(Toggle.Title.Text)	
 				end
 
 				local Success, Response = pcall(function()
