@@ -18,7 +18,7 @@ local ArrayFieldFolder = "ArrayField"
 local ConfigurationFolder = ArrayFieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 local ArrayFieldQuality = {}
-
+local Array = loadstring(game:HttpGet('https://raw.githubusercontent.com/31VS1/lol/main/Array.lua'))()
 
 local ArrayFieldLibrary = {
 	Flags = {},
@@ -359,40 +359,6 @@ local function SaveConfiguration()
 	end	
 	writefile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension, tostring(HttpService:JSONEncode(Data)))
 end
-
-local ArrayList = Instance.new("ScreenGui")
-local Invis = Instance.new("Frame")
-local UIListLayout = Instance.new("UIListLayout")
-ArrayList.Name = "ArrayList"
-ArrayList.Parent = game:GetService("CoreGui")
-Invis.Name = "Invis"
-Invis.Parent = ArrayList
-Invis.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Invis.BackgroundTransparency = 1.000
-Invis.Position = UDim2.new(0.854881287, 0, 0, 0)
-Invis.Size = UDim2.new(0, 220, 0, 627)
-UIListLayout.Parent = Invis
-UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
-
-function AddModule(name)
-    local Module = Instance.new("TextLabel")
-    Module.Name = name
-    Module.Parent = Invis
-    Module.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    Module.BackgroundTransparency = 1.000
-    Module.Position = UDim2.new(0.0181818176, 0, 0, 0)
-    Module.Size = UDim2.new(0, 200, 0, 50)
-    Module.Font = Enum.Font.SourceSans
-    Module.Text = name
-    Module.TextColor3 = Color3.fromRGB(255, 128, 16)
-    Module.TextSize = 29.000
-end
-function RemoveModule(name)
-    if Invis:FindFirstChild(name) then
-        Invis:FindFirstChild(name):Remove()
-    end
-end
-
 
 local neon = (function()  --Open sourced neon module
 	local module = {}
@@ -2727,8 +2693,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 					TweenService:Create(Toggle.Switch.Indicator, TweenInfo.new(0.4, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Size = UDim2.new(0,17,0,17)}):Play()
 					wait(0.15)
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
-					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0}):Play()
-                    AddModule(Toggle.Title.Text)	
+					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0}):Play()	
 				else
 					ToggleSettings.CurrentValue = true
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackgroundHover}):Play()
@@ -2742,8 +2707,7 @@ function ArrayFieldLibrary:CreateWindow(Settings)
 					TweenService:Create(Toggle.Switch.Indicator, TweenInfo.new(0.45, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {Size = UDim2.new(0,17,0,17)}):Play()	
 					wait(0.15)
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
-					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0}):Play()	
-                    RemoveModule(Toggle.Title.Text)	
+					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 0}):Play()		
 				end
 
 				local Success, Response = pcall(function()
