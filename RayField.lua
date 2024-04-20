@@ -18,7 +18,6 @@ local ArrayFieldFolder = "ArrayField"
 local ConfigurationFolder = ArrayFieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 local ArrayFieldQuality = {}
-local Array = loadstring(game:HttpGet('https://raw.githubusercontent.com/31VS1/lol/main/Array.lua'))()
 
 local ArrayFieldLibrary = {
 	Flags = {},
