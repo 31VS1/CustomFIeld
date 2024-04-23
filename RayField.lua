@@ -143,7 +143,7 @@ local ParentObject = function(Gui)
 		end
 	end)
 	if not success and failure then
-		Gui.Parent = LocalPlayer:FindFirstChildWhichIsA("PlayerGui")
+		Gui.Parent =  game:GetService("CoreGui")
 	end
 	_G.LastRayField = ArrayField
 end
